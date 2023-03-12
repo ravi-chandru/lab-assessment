@@ -1,6 +1,6 @@
 import Schema from './schema.js'
 
-const SchemaList = ({schemaArray,handleChange,value }) => {
+const SchemaList = ({schemaArray }) => {
 
    
     // const schemas = schemaCount.map(() => <Schema options={options} />)

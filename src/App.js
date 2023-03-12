@@ -13,12 +13,12 @@ const App = () => {
 
     const [filteredOptions,setFilteredOptions] = useState(["First Name","Last Name", "Gender", "Age", "Account Name","City","State"]);
 
-    const [value,setValue] = useState(filteredOptions[0])
+    const [value,setValue] = useState(options[0])
 
     const handleChange = (event) => {
+        console.log(event.target.value);
         setValue(event.target.value);
         const fo = [...filteredOptions].filter((x)=> x!== event.target.value);
-        console.log(fo);
         setFilteredOptions(fo);
        
      }
@@ -35,7 +35,7 @@ const App = () => {
         setSchemaCount(count);
         const newOptions = [...schemaArray];
         // const filteredOptions = [...options].slice(1,options.length)
-        newOptions.push(<Schema options={filteredOptions}/>)
+        newOptions.push(<Schema options={filteredOptions} value={value} handleChange={handleChange}/>)
         console.log(newOptions)
         setSchemaArray(newOptions);
     }
